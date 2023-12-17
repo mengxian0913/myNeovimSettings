@@ -221,6 +221,11 @@ _G.packer_plugins = {
     path = "/Users/vincent/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["scss-syntax.vim"] = {
+    loaded = true,
+    path = "/Users/vincent/.local/share/nvim/site/pack/packer/start/scss-syntax.vim",
+    url = "https://github.com/cakebaker/scss-syntax.vim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/vincent/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",

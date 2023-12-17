@@ -147,4 +147,7 @@ return packer.startup(function(use)
 	use("preservim/nerdcommenter")
 
 	use("lukas-reineke/indent-blankline.nvim")
+
+	-- scss
+	use("cakebaker/scss-syntax.vim")
 end)
