@@ -60,3 +60,10 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 -- markdown preview
 keymap.set("n", "<leader>ns", ":MarkdownPreviewToggle<CR>")
 -- keymap.set("n", "<leader>nn", ":")
+
+-- terminal
+-- toggleterm.nvim
+keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>") -- toggle terminal
+keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>") -- open terminal in floating mode
+keymap.set("n", "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>") -- open terminal in horizontal split
+keymap.set("n", "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>") -- open terminal in vertical split

@@ -75,14 +75,14 @@ return packer.startup(function(use)
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-		requires = {
-			{ "nvim-tree/nvim-web-devicons" },
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
-	}) -- enhanced lsp uis
+	-- use({
+	-- 	"glepnir/lspsaga.nvim",
+	-- 	branch = "main",
+	-- 	requires = {
+	-- 		{ "nvim-tree/nvim-web-devicons" },
+	-- 		{ "nvim-treesitter/nvim-treesitter" },
+	-- 	},
+	-- }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
@@ -124,12 +124,12 @@ return packer.startup(function(use)
 	-- install without yarn or npm
 
 	-- install without yarn or npm
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
+	-- use({
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	run = function()
+	-- 		vim.fn["mkdp#util#install"]()
+	-- 	end,
+	-- })
 
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -150,4 +150,7 @@ return packer.startup(function(use)
 
 	-- scss
 	use("cakebaker/scss-syntax.vim")
+
+	-- Terminal
+	use("akinsho/toggleterm.nvim")
 end)
