@@ -10,7 +10,7 @@ if not cmp_nvim_lsp_status then
 	return
 end
 
--- import typescript plugin safely
+-- -- import typescript plugin safely
 -- local typescript_setup, typescript = pcall(require, "typescript")
 -- if not typescript_setup then
 -- 	return
@@ -69,11 +69,11 @@ lspconfig["html"].setup({
 -- 		on_attach = on_attach,
 -- 	},
 -- })
-lspconfig["ts_ls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
 
+lspconfig["ts_ls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
 
 -- configure css server
 lspconfig["cssls"].setup({
@@ -87,11 +87,17 @@ lspconfig["tailwindcss"].setup({
 	on_attach = on_attach,
 })
 
+lspconfig["volar"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "vue" }, -- 只在 vue 文件類型中啟用
+})
+
 -- configure emmet language server
 lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
 })
 
 -- configure lua server (with special settings)
@@ -110,6 +116,22 @@ lspconfig["lua_ls"].setup({
 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 					[vim.fn.stdpath("config") .. "/lua"] = true,
 				},
+			},
+		},
+	},
+})
+
+-- 配置 Python LSP (Pyright)
+lspconfig["pyright"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		python = {
+			analysis = {
+				typeCheckingMode = "basic",
+				autoSearchPaths = true,
+				useLibraryCodeForTypes = true,
+				diagnosticMode = "workspace",
 			},
 		},
 	},
